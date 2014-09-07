@@ -1,0 +1,19 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title: FIXME - Meta
+definitions:
+  code:
+    description: http status code
+    example: 200
+    format: integer
+    type:
+    - integer
+description: FIXME
+properties:
+  code:
+    "$ref": "/schemata/meta#/definitions/code"
+required: [code]
+additionalProperties: false
+type:
+- object
+id: schemata/meta

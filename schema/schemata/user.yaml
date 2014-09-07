@@ -1,0 +1,106 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title: FIXME - User
+definitions:
+  id:
+    description: unique identifier of user
+    example: 32981
+    format: integer
+    type:
+    - integer
+  nickname:
+    description: name of user
+    example: "たなかたろう"
+    format: string
+    type:
+    - string
+  imageUrl:
+    description: image url of user
+    example: "http://example.jp/profile.jpg"
+    format: string
+    type:
+    - string
+  createdAt:
+    description: when user was created
+    example: '2012-01-01T12:00:00Z'
+    format: date-time
+    type:
+    - string
+  updatedAt:
+    description: when user was updated
+    example: '2012-01-01T12:00:00Z'
+    format: date-time
+    type:
+    - string
+description: FIXME
+links:
+- description: List existing users.
+  href: "/users"
+  method: GET
+  rel: instances
+  title: List
+  targetSchema:
+    properties:
+      meta:
+        "$ref": "/schemata/meta"
+      body:
+        items:
+          "$ref": "/schemata/user"
+        type:
+        - array
+- description: Info for existing user.
+  href: "/users/{(%2Fschemata%2Fuser%23%2Fdefinitions%2Fid)}"
+  method: GET
+  rel: self
+  title: Info
+  targetSchema:
+    properties:
+      meta:
+        "$ref": "/schemata/meta"
+      body:
+        "$ref": "/schemata/user"
+- description: Create a new user.
+  href: "/users"
+  method: POST
+  rel: create
+  schema:
+    properties: {}
+    type:
+    - object
+  title: Create
+- description: Delete an existing user.
+  href: "/users/{(%2Fschemata%2Fuser%23%2Fdefinitions%2Fid)}"
+  method: DELETE
+  rel: destroy
+  title: Delete
+- description: Update an existing user.
+  href: "/users/{(%2Fschemata%2Fuser%23%2Fdefinitions%2Fid)}"
+  method: PUT
+  rel: update
+  schema:
+    properties: {}
+    type:
+    - object
+  targetSchema:
+    properties:
+      meta:
+        "$ref": "/schemata/meta"
+      body:
+        "$ref": "/schemata/user"
+  title: Update
+properties:
+  id:
+    "$ref": "/schemata/user#/definitions/id"
+  nickname:
+    "$ref": "/schemata/user#/definitions/nickname"
+  imageUrl:
+    "$ref": "/schemata/user#/definitions/imageUrl"
+  createdAt:
+    "$ref": "/schemata/user#/definitions/createdAt"
+  updatedAt:
+    "$ref": "/schemata/user#/definitions/updatedAt"
+required: [id, nickname, imageUrl, createdAt, updatedAt]
+additionalProperties: false
+type:
+- object
+id: schemata/user

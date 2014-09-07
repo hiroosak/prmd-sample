@@ -1,0 +1,75 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title: FIXME - Site
+definitions:
+  id:
+    description: unique identifier of site
+    example: 3221
+    format: id
+    type:
+    - integer
+  name:
+    description: name
+    example: "Site Name"
+    format: string
+    type:
+    - string
+description: FIXME
+links:
+- description: Create a new site.
+  href: "/sites"
+  method: POST
+  rel: create
+  schema:
+    properties: {}
+    type:
+    - object
+  title: Create
+- description: Delete an existing site.
+  href: "/sites/{(%2Fschemata%2Fsite%23%2Fdefinitions%2Fid)}"
+  method: DELETE
+  rel: destroy
+  title: Delete
+- description: Info for existing site.
+  href: "/sites/{(%2Fschemata%2Fsite%23%2Fdefinitions%2Fid)}"
+  method: GET
+  rel: self
+  title: Info
+  targetSchema:
+    properties:
+      meta:
+        "$ref": "/schemata/meta"
+      body:
+        "$ref": "/schemata/site"
+- description: List existing sites.
+  href: "/sites"
+  method: GET
+  rel: instances
+  title: List
+  targetSchema:
+    properties:
+      meta:
+        "$ref": "/schemata/meta"
+      body:
+        items:
+          "$ref": "/schemata/site"
+        type:
+        - array
+- description: Update an existing site.
+  href: "/sites/{(%2Fschemata%2Fsite%23%2Fdefinitions%2Fid)}"
+  method: PATCH
+  rel: update
+  schema:
+    properties: {}
+    type:
+    - object
+  title: Update
+properties:
+  id:
+    "$ref": "/schemata/site#/definitions/id"
+  name:
+    "$ref": "/schemata/site#/definitions/name"
+additionalProperties: false
+type:
+- object
+id: schemata/site

@@ -1,0 +1,18 @@
+description: Hello world
+id: hello-prmd
+links:
+  - href: http://local.example.jp
+    rel: self
+title: "Hello Prmd"
+properties:
+  meta:
+    "$ref": "#/definitions/meta"
+  body:
+    type: object
+    anyOf: # TODO: あとで自動化
+      - "$ref": "#/definitions/site"
+      - "$ref": "#/definitions/user"
+required:
+- meta 
+- body
+additionalProperties: false

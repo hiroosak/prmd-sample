@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "code": 200
+  },
+  "body": {
+    "id": 383838,
+    "nickname": "Hello",
+    "imageUrl": "http://example.jp/hello.json",
+    "createdAt": "2012-01-01T12:00:00Z",
+    "updatedAt": "2012-01-01T12:00:00Z"
+  }
+}
